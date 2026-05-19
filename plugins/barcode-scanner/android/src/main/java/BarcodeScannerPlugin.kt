@@ -303,6 +303,13 @@ class BarcodeScannerPlugin(private val activity: Activity) : Plugin(activity),
                         jsObject.put("format", format)
                         jsObject.put("bounds", s)
 
+                        if (barcode.rawBytes != null) {
+                            jsObject.put(
+                                "rawBytesBase64",
+                                Base64.encodeToString(barcode.rawBytes, Base64.NO_WRAP)
+                            )
+                        }
+
                         savedInvoke?.resolve(jsObject)
                         destroy()
                     }
