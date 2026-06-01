@@ -54,6 +54,7 @@ export interface Scanned {
   content: string
   format: Format
   bounds: unknown
+  rawBytes?: string
 }
 
 /**
