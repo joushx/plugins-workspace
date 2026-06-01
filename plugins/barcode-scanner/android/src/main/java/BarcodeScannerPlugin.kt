@@ -306,7 +306,7 @@ class BarcodeScannerPlugin(private val activity: Activity) : Plugin(activity),
 
                         if (barcode.rawBytes != null) {
                             jsObject.put(
-                                "rawBytesBase64",
+                                "rawBytes",
                                 Base64.encodeToString(barcode.rawBytes, Base64.NO_WRAP)
                             )
                         }
